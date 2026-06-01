@@ -1,101 +1,240 @@
-Cafe Sales Analytics Dashboard
-Project Overview
-This project presents a comprehensive analysis of cafe sales data using Python, SQL, and Power BI. The primary objective is to explore customer purchasing behavior, identify sales trends, answer business-driven questions through SQL, and develop an interactive dashboard for data-driven decision-making.
-Dataset Description
-The dataset contains 10,000 cafe transactions and includes information related to products, sales, payment methods, locations, and transaction dates.
-Features
+# Cafe Sales EDA & Business Intelligence Project
 
-Transaction ID
-Item
-Quantity
-Price Per Unit
-Total Spent
-Payment Method
-Location
-Transaction Date
-Month
-Day Name
+## Project Overview
 
-Project Objectives
+This project focuses on performing Exploratory Data Analysis (EDA) and Business Intelligence on a Cafe Sales dataset containing 10,000 transactions. The objective is to identify patterns, trends, and relationships within the data and generate meaningful business insights using statistical analysis, SQL queries, and dashboard visualizations.
 
-Perform Exploratory Data Analysis (EDA) on cafe sales data.
-Generate descriptive statistics and visualize data distributions.
-Analyze customer purchasing patterns.
-Solve business problems using SQL queries.
-Explore relationships between variables through correlation analysis.
-Design a Power BI dashboard to monitor key business metrics.
+---
 
-Technologies Used
+## Objectives
 
-Python
-Pandas
-Matplotlib
-Seaborn
-SQLite
-Jupyter Notebook
-Power BI
-GitHub
+- Perform descriptive statistical analysis on sales data.
+- Explore customer purchasing patterns and sales trends.
+- Answer business questions using SQL queries.
+- Identify relationships between variables through correlation analysis.
+- Build an interactive dashboard using Power BI.
+- Generate actionable business insights for decision-making.
 
-Exploratory Data Analysis
-Descriptive Statistics
+---
 
-Dataset overview
-Summary statistics
-Data type verification
-Distribution analysis
+## Dataset Information
 
-Univariate Analysis
+The dataset contains transaction-level information from a cafe.
 
-Product popularity analysis
-Payment method distribution
-Customer spending distribution
-Transaction frequency analysis
+### Dataset Features
 
-Multivariate Analysis
+| Column Name | Description |
+|------------|-------------|
+| transaction_id | Unique transaction identifier |
+| item | Product purchased |
+| quantity | Quantity purchased |
+| price_per_unit | Price per unit of item |
+| total_spent | Total amount spent in transaction |
+| payment_method | Mode of payment |
+| location | Sales location |
+| transaction_date | Date of transaction |
+| month | Month of transaction |
+| day_name | Day of the week |
 
-Correlation heatmap
-Scatter plot analysis
-Revenue contribution analysis
-Quantity versus spending relationship
+### Dataset Summary
 
-SQL Business Questions
-The following business questions were addressed:
+- Total Records: 10,000
+- Total Features: 10
+- Data Type: Structured CSV Data
 
-Which product generates the highest revenue?
-What is the monthly revenue trend?
-Which payment method is used most frequently?
-Which location contributes the highest revenue?
-Which product is ordered most often?
-What is the average transaction value?
-What patterns can be observed in overall sales performance?
+---
 
-Dashboard Features
-Key Performance Indicators (KPIs)
+## Tools & Technologies Used
 
-Total Revenue
-Total Transactions
-Average Spending per Transaction
-Top Revenue-Generating Product
+- Python
+- Pandas
+- Matplotlib
+- Seaborn
+- SQLite
+- Jupyter Notebook
+- VS Code
+- Power BI
 
-Visualizations
+---
 
-Revenue by Product
-Monthly Revenue Trend
-Payment Method Distribution
-Revenue by Location
-Sales Performance Overview
+# Exploratory Data Analysis (EDA)
 
-Key Findings
+The following analyses were performed:
 
-Juice is the most frequently purchased product.
-Salad generates the highest overall revenue.
-Customer spending increases significantly with higher purchase quantities.
-Product pricing has a strong influence on total revenue.
-Sales patterns vary across locations and months.
-Most transactions fall within low to medium spending ranges.
+## 1. Dataset Overview
 
-Project Structure
-Cafe-Sales-Analytics/
+- Loaded dataset using Pandas
+- Examined dataset structure
+- Checked data types and record count
+
+## 2. Descriptive Statistics
+
+Calculated:
+
+- Mean
+- Median
+- Standard Deviation
+- Minimum Values
+- Maximum Values
+- Quartiles
+
+## 3. Univariate Analysis
+
+Performed:
+
+### Product Analysis
+
+- Item frequency distribution
+- Most ordered products
+
+### Spending Analysis
+
+- Distribution of total spending
+- Customer spending behavior
+
+### Payment Method Analysis
+
+- Payment method frequency distribution
+
+---
+
+# Data Visualization
+
+The following visualizations were created:
+
+## Histogram
+
+- Distribution of Total Spending
+
+## Bar Charts
+
+- Revenue by Item
+- Payment Method Distribution
+- Revenue by Location
+
+## Line Chart
+
+- Monthly Revenue Trend
+
+## Correlation Heatmap
+
+- Relationship between Quantity, Price per Unit, and Total Spending
+
+## Scatter Plot
+
+- Quantity vs Total Spending
+
+---
+
+# SQL Business Questions
+
+The following SQL queries were written and executed:
+
+### 1. Which item generates the highest revenue?
+
+```sql
+SELECT item,
+SUM(total_spent) AS revenue
+FROM cafe_sales
+GROUP BY item
+ORDER BY revenue DESC;
+```
+
+### 2. What is the monthly revenue trend?
+
+```sql
+SELECT month,
+SUM(total_spent) AS revenue
+FROM cafe_sales
+GROUP BY month;
+```
+
+### 3. Which payment method is used most frequently?
+
+```sql
+SELECT payment_method,
+COUNT(*) AS transactions
+FROM cafe_sales
+GROUP BY payment_method;
+```
+
+### 4. Which location generates the highest revenue?
+
+```sql
+SELECT location,
+SUM(total_spent) AS revenue
+FROM cafe_sales
+GROUP BY location;
+```
+
+### 5. Which item is ordered most frequently?
+
+```sql
+SELECT item,
+COUNT(*) AS orders
+FROM cafe_sales
+GROUP BY item
+ORDER BY orders DESC;
+```
+
+### 6. What is the average transaction value?
+
+```sql
+SELECT AVG(total_spent)
+FROM cafe_sales;
+```
+
+### 7. What are the overall sales trends across months?
+
+```sql
+SELECT month,
+SUM(total_spent)
+FROM cafe_sales
+GROUP BY month;
+```
+
+---
+
+# Power BI Dashboard
+
+A Business Intelligence dashboard was developed using Power BI.
+
+## Dashboard Components
+
+### KPI Cards
+
+- Total Revenue
+- Total Transactions
+- Average Spending
+- Top Revenue Item
+
+### Visualizations
+
+- Revenue by Item
+- Monthly Revenue Trend
+- Payment Method Distribution
+- Revenue by Location
+
+The dashboard provides a quick overview of sales performance and customer behavior.
+
+---
+
+# Key Insights
+
+- Juice was the most frequently ordered item.
+- Salad generated the highest revenue among all products.
+- Quantity purchased has a strong positive correlation with total spending.
+- Price per unit significantly influences overall revenue.
+- Customer spending is concentrated around low and medium transaction values.
+- Different locations contribute differently to total sales performance.
+- Monthly sales trends help identify peak business periods.
+
+---
+
+# Project Structure
+
+```text
+Cafe_Sales_EDA/
 │
 ├── cleaned_cafe_sales.csv
 ├── eda.ipynb
@@ -103,22 +242,16 @@ Cafe-Sales-Analytics/
 ├── README.md
 ├── dashboard.png
 └── CafeSalesDashboard.pbix
+```
 
-How to Run the Project
+---
 
-Download or clone the repository.
-Install the required Python libraries:
+# Conclusion
 
-pip install pandas matplotlib seaborn jupyter
+This project successfully applied Exploratory Data Analysis (EDA) and Business Intelligence techniques to analyze a Cafe Sales dataset containing 10,000 transactions. Statistical analysis, SQL-based business queries, and interactive visualizations were used to uncover meaningful patterns and trends in customer purchasing behavior.
 
+The analysis revealed that Juice was the most frequently ordered item, while Salad generated the highest revenue. Correlation analysis showed a strong positive relationship between quantity purchased and total spending, indicating that larger purchases contribute significantly to revenue growth. Payment methods, locations, and monthly sales trends were also examined to better understand business performance.
 
-Open the Jupyter Notebook:
+The Power BI dashboard provides a clear and interactive view of key performance indicators, enabling efficient monitoring of sales performance and customer behavior.
 
-jupyter notebook
-
-
-Run all notebook cells to reproduce the analysis.
-Open the Power BI dashboard file (CafeSalesDashboard.pbix) to explore interactive visualizations.
-
-Conclusion
-This project demonstrates the practical application of data analytics, SQL querying, and business intelligence techniques on real-world sales data. The insights obtained can help improve inventory management, optimize product offerings, understand customer preferences, and support strategic business decisions.
+Overall, this project demonstrates how data analytics and business intelligence tools can be used to transform raw transactional data into actionable insights that support data-driven business decisions.
