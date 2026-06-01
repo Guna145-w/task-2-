@@ -1,8 +1,9 @@
-Cafe Sales EDA & Business Intelligence Dashboard
+Cafe Sales Analytics Dashboard
 Project Overview
-This project focuses on analyzing cafe sales data using Python, SQL, and Power BI. The objective is to perform Exploratory Data Analysis (EDA), answer business questions using SQL, and build an interactive dashboard to uncover trends, customer behavior, and revenue insights.
-Dataset
-The dataset contains 10,000 cafe transactions with the following attributes:
+This project presents a comprehensive analysis of cafe sales data using Python, SQL, and Power BI. The primary objective is to explore customer purchasing behavior, identify sales trends, answer business-driven questions through SQL, and develop an interactive dashboard for data-driven decision-making.
+Dataset Description
+The dataset contains 10,000 cafe transactions and includes information related to products, sales, payment methods, locations, and transaction dates.
+Features
 
 Transaction ID
 Item
@@ -15,15 +16,16 @@ Transaction Date
 Month
 Day Name
 
-Objectives
+Project Objectives
 
-Perform descriptive statistical analysis.
-Analyze distributions of numerical and categorical variables.
-Answer business questions using SQL queries.
-Identify relationships between variables using correlation analysis.
-Build a Power BI dashboard for business insights.
+Perform Exploratory Data Analysis (EDA) on cafe sales data.
+Generate descriptive statistics and visualize data distributions.
+Analyze customer purchasing patterns.
+Solve business problems using SQL queries.
+Explore relationships between variables through correlation analysis.
+Design a Power BI dashboard to monitor key business metrics.
 
-Tools & Technologies
+Technologies Used
 
 Python
 Pandas
@@ -34,68 +36,66 @@ Jupyter Notebook
 Power BI
 GitHub
 
-Exploratory Data Analysis (EDA)
+Exploratory Data Analysis
 Descriptive Statistics
 
-Summary statistics for numerical features.
-Dataset structure and data type verification.
-Distribution analysis of spending and quantity purchased.
+Dataset overview
+Summary statistics
+Data type verification
+Distribution analysis
 
 Univariate Analysis
 
-Item Sales Distribution
-Payment Method Distribution
-Customer Spending Distribution
-Transaction Frequency Analysis
+Product popularity analysis
+Payment method distribution
+Customer spending distribution
+Transaction frequency analysis
 
 Multivariate Analysis
 
-Correlation Heatmap
-Scatter Plot (Quantity vs Total Spending)
-Revenue Analysis by Product
+Correlation heatmap
+Scatter plot analysis
+Revenue contribution analysis
+Quantity versus spending relationship
 
 SQL Business Questions
-1. Which item generates the highest revenue?
-Analyzed product-wise revenue contribution.
-2. What is the monthly revenue trend?
-Evaluated sales performance across months.
-3. Which payment method is most frequently used?
-Identified customer payment preferences.
-4. Which location generates the highest revenue?
-Compared revenue across different sales locations.
-5. Which item is ordered most frequently?
-Determined the most popular menu item.
-6. What is the average transaction value?
-Calculated average customer spending.
-7. What are the overall sales trends?
-Analyzed transaction patterns and revenue growth.
-Dashboard Components
-KPI Cards
+The following business questions were addressed:
+
+Which product generates the highest revenue?
+What is the monthly revenue trend?
+Which payment method is used most frequently?
+Which location contributes the highest revenue?
+Which product is ordered most often?
+What is the average transaction value?
+What patterns can be observed in overall sales performance?
+
+Dashboard Features
+Key Performance Indicators (KPIs)
 
 Total Revenue
 Total Transactions
-Average Spending
-Top Revenue Item
+Average Spending per Transaction
+Top Revenue-Generating Product
 
 Visualizations
 
-Revenue by Item
+Revenue by Product
 Monthly Revenue Trend
 Payment Method Distribution
 Revenue by Location
 Sales Performance Overview
 
-Key Insights
+Key Findings
 
-Juice was the most frequently ordered item.
-Salad generated the highest revenue among all products.
-Quantity purchased shows a strong positive relationship with total spending.
-Price per unit contributes significantly to revenue generation.
-Customer spending is concentrated around low and medium transaction values.
-Sales performance varies across locations and time periods.
+Juice is the most frequently purchased product.
+Salad generates the highest overall revenue.
+Customer spending increases significantly with higher purchase quantities.
+Product pricing has a strong influence on total revenue.
+Sales patterns vary across locations and months.
+Most transactions fall within low to medium spending ranges.
 
 Project Structure
-Cafe-Sales-EDA/
+Cafe-Sales-Analytics/
 │
 ├── cleaned_cafe_sales.csv
 ├── eda.ipynb
@@ -104,10 +104,10 @@ Cafe-Sales-EDA/
 ├── dashboard.png
 └── CafeSalesDashboard.pbix
 
-How to Run
+How to Run the Project
 
-Clone the repository.
-Install required libraries:
+Download or clone the repository.
+Install the required Python libraries:
 
 pip install pandas matplotlib seaborn jupyter
 
@@ -117,8 +117,8 @@ Open the Jupyter Notebook:
 jupyter notebook
 
 
-Run all notebook cells.
-Open the Power BI dashboard file (CafeSalesDashboard.pbix) to explore visualizations.
+Run all notebook cells to reproduce the analysis.
+Open the Power BI dashboard file (CafeSalesDashboard.pbix) to explore interactive visualizations.
 
 Conclusion
-This project demonstrates how Python, SQL, and Power BI can be integrated to perform end-to-end business analytics. The analysis provides valuable insights into customer purchasing behavior, product performance, payment preferences, and revenue trends. These findings can support data-driven decision-making and business growth.
+This project demonstrates the practical application of data analytics, SQL querying, and business intelligence techniques on real-world sales data. The insights obtained can help improve inventory management, optimize product offerings, understand customer preferences, and support strategic business decisions.
